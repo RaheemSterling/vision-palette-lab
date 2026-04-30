@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vision Palette Lab</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <div class="intro">
+          <p class="eyebrow">Canvas image analysis</p>
+          <h1>Vision Palette Lab</h1>
+          <p class="lede">Drop an image to inspect its palette, contrast, edge density, and visual character directly in the browser.</p>
+        </div>
+
+        <label class="drop-zone" id="dropZone">
+          <input id="fileInput" type="file" accept="image/*">
+          <span class="drop-title">Choose or drop an image</span>
+          <span class="drop-copy">PNG, JPG, WebP, or GIF frame</span>
+        </label>
+
+        <div class="stage">
+          <canvas id="canvas" width="900" height="620"></canvas>
+          <div class="empty-state" id="emptyState">Image preview</div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <section class="result-card">
+          <h2>Classification</h2>
+          <p class="classification" id="classification">Waiting for image</p>
+          <p class="confidence" id="confidence">Drop an image to calculate visual signals.</p>
+        </section>
+
+        <section class="result-card">
+          <h2>Metrics</h2>
+          <div class="metrics">
+            <div>
+              <span>Brightness</span>
+              <strong id="brightness">--</strong>
+            </div>
+            <div>
+              <span>Saturation</span>
+              <strong id="saturation">--</strong>
+            </div>
+            <div>
+              <span>Edge density</span>
+              <strong id="edgeDensity">--</strong>
+            </div>
+            <div>
+              <span>Warm pixels</span>
+              <strong id="warmPixels">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="result-card">
+          <h2>Palette</h2>
+          <div class="palette" id="palette"></div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
